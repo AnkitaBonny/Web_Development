@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+
+     // Check for LocalStorage support.
+  //if (localStorage) {
+
+    // Add an event listener for form submissions
+    //document.getElementById('contactForm').addEventListener('submit', function() {
+  // function myFunction() {
+
+   	//if(localStorage) {
+      // Get the value of the name field.
+      window.onload=function() {
+
+      document.getElementById('contactForm').addEventListener('submit', event => {
+      	event.preventDefault();
+
+      	if(localStorage){
+
+      	var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        console.log(name);
+        document.location.href = './info2_pageredirect.html'
+
+    	}
+
+      });
+
+      }
+
+      // Save the name in localStorage.
+    
+
+     //localStorage.setItem('name', name);
+ 	//}
+  //}
+    //});
+
+//  }
+
+</script>
+
+</head>
+
+<body>
+<form id="contactForm">
+  <div class="field">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+  </div>
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email">
+  </div>
+  <div class="field">
+    <button type="submit"> Submit</button>
+  </div>
+</form>
+
+</body>
+</html>
